@@ -1,17 +1,19 @@
 export class Elemento {
-  constructor(
-    private readonly id: number,
-    private readonly name: String,
-    private readonly valor: Number
-  ) {}
+  public readonly id: string;
+  public readonly valor: number;
+  private readonly relacionados: Set<string>;
 
-  getId(): Number {
-    return this.id;
+  constructor(id: string, valor: number) {
+    this.id = id;
+    this.valor = valor;
+    this.relacionados = new Set();
   }
-  getName(): String {
-    return this.name;
+
+  getRelacoes() {
+    return Array.from(this.relacionados);
   }
-  getValor(): Number {
-    return this.valor;
+
+  _adicionarRelacao(id: string) {
+    this.relacionados.add(id);
   }
 }
