@@ -1,4 +1,3 @@
-import { error } from "node:console";
 import { Elemento } from "./Elemento.js";
 
 export class Validator {
